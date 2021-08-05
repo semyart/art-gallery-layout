@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blanchard — художественная галерея</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/choices.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="container header__container">
+          <div class="burger header__burger">
+            <span class="burger__mid-lane"></span>
+          </div>
+          <a href="" class="logo header__logo">
+            <picture class="picture logo__picture">
+              <source srcset="/img/header/logo_1024.svg" media="(max-width: 1374px)">
+              <img class="logo__img" src="/img/header/logo.svg" alt="Логотип: Blanchard — художественная галерея">
+            </picture>
+          </a>
+          <nav class="nav header__nav">
+            <ul class="nav-list">
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                  О нас
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                Галерея
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                Каталог
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                События
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                Издания
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                Проекты
+                </a>
+              </li>
+              <li class="nav__list-item">
+                <a href="" class="link header__link">
+                Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <a href="" class="link-button header__link-button">
+            Войти
+          </a>
+          <button class="search-button header__search-button">
+            <img class="search-button__img" src="/img/header/Search.svg" alt="Поиск">
+          </button>
+        </div>
+    </header>
+
+    <!-- hero -->
+
+    <section class="section section-hero">
+      <div class="top-bar hero__top-bar">
+        <div class="container hero__container hero__container_flex">
+          <ul class="search-list">
+            <li class="search-item">
+              <label for="first-select" class="select-name">
+                Реализм
+              </label>
+              <select class="select top-bar__select" id="first-select" name="select">
+                <option value="">Тинторетто</option>
+                <option value="">Фридрих</option>
+                <option value="">Леонардо</option>
+                <option value="">Верроккьо</option>
+              </select>
+            </li>
+
+
+            <li class="search-item">
+              <label for="second-select" class="select-name">
+                Импрессионизм
+              </label>
+              <select class="select top-bar__select" id="second-select" name="select">
+                <option value="">Моне</option>
+                <option value="">Сислей</option>
+                <option value="">Мане</option>
+                <option value="">Ренуар</option>
+              </select>
+            </li>
+
+            <li class="search-item">
+              <label for="third-select" class="select-name">
+              Постимпрессионизм
+            </label>
+            <select class="select top-bar__select" id="third-select" name="select">
+              <option value="">Ван Гог</option>
+              <option value="">Сезанн</option>
+              <option value="">Гоген</option>
+              <option value="">Сёра</option>
+            </select>
+            </li>
+
+            <li class="search-item">
+              <label for="fourth-select" class="select-name">
+                Авангард
+              </label>
+              <select class="select top-bar__select" id="fourth-select" name="select">
+                <option value="">Кандинский</option>
+                <option value="">Маринетти</option>
+                <option value="">Малевич</option>
+                <option value="">Пикассо</option>
+              </select>
+            </li>
+
+            <li class="search-item">
+              <label for="fifth-select" class="select-name">
+                Футуризм
+              </label>
+              <select class="select top-bar__select top-bar__select_last" id="fifth-select" name="select">
+                <option value="">Карра</option>
+                <option value="">Прателла</option>
+                <option value="">Северини</option>
+                <option value="">Балла</option>
+              </select>
+            </li>
+          </ul>
+          <form class="search-form" action="" method="get">
+            <div class="search-form__content">
+              <img class="search-form__img" src="/img/hero/search_butn.svg" alt="Поиск">
+              <input class="search-form__input" placeholder="Поиск по сайту" type="search">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container hero__container">
+        <div class="content hero__content">
+          <h2 class="heading content__heading">
+            Прикоснитесь к прекрасному
+          </h2>
+          <p class="text content__text">
+            Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.
+          </p>
+          <a href="" class="link-button content__link-button">
+            Подписаться на рассылку
+          </a>
+        </div>
+      </div>
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide swiper-slide_first" ></div>
+          <div class="swiper-slide swiper-slide_second"></div>
+          <div class="swiper-slide swiper-slide_third"></div>
+        </div>
+      </div>
+    </section>
+
+  <script src="/js/choices.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>
