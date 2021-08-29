@@ -1,68 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  //слайдер
   const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
     loop: true,
   });
 
-  document.querySelector('#first-select-button').addEventListener('click', function() {
-    document.querySelector('#first-dropdown').classList.toggle('search-item__dropdown_is-active')
-    document.querySelector('#first-select-button').classList.toggle('search-item__button_is-active')
-    document.querySelector('#first-arrow-bottom').classList.toggle('arrow-bottom_rotate')
-    document.querySelector('#first-arrow-bottom-path').classList.toggle('arrow-bottom-path_active')
-  });
+  //бургер
+  $('.header__burger').click(function(event) {
+    $('.header__burger').toggleClass('header__burger_active');
+    $('.header__nav').toggleClass('header__nav_active');
+    $('.header__link-button').toggleClass('header__link-button_active');
+  })
 
-  document.querySelector('#second-select-button').addEventListener('click', function() {
-    document.querySelector('#second-dropdown').classList.toggle('search-item__dropdown_is-active')
-    document.querySelector('#second-select-button').classList.toggle('search-item__button_is-active')
-    document.querySelector('#second-arrow-bottom').classList.toggle('arrow-bottom_rotate')
-    document.querySelector('#second-arrow-bottom-path').classList.toggle('arrow-bottom-path_active')
-  });
+  //реализация поиска
+  document.querySelector('.search__img').addEventListener('click', function() {
+    document.querySelector('.header__search-form').classList.toggle('header__search-form_active');
+    document.querySelector('.header__logo').classList.toggle('header__logo_search');
+    document.querySelector('.header__burger').classList.toggle('header__burger_search');
+    document.querySelector('.header-top').classList.toggle('header-top_search');
+  })
 
-  document.querySelector('#third-select-button').addEventListener('click', function() {
-    document.querySelector('#third-dropdown').classList.toggle('search-item__dropdown_is-active')
-    document.querySelector('#third-select-button').classList.toggle('search-item__button_is-active')
-    document.querySelector('#third-arrow-bottom').classList.toggle('arrow-bottom_rotate')
-    document.querySelector('#third-arrow-bottom-path').classList.toggle('arrow-bottom-path_active')
-  });
+  //выпадающее меню
+  document.querySelectorAll('.search-item__button').forEach(item => {
 
-  document.querySelector('#fourth-select-button').addEventListener('click', function() {
-    document.querySelector('#fourth-dropdown').classList.toggle('search-item__dropdown_is-active')
-    document.querySelector('#fourth-select-button').classList.toggle('search-item__button_is-active')
-    document.querySelector('#fourth-arrow-bottom').classList.toggle('arrow-bottom_rotate')
-    document.querySelector('#fourth-arrow-bottom-path').classList.toggle('arrow-bottom-path_active')
-  });
+    item.addEventListener('click', function() {
+      let li = this.parentElement;
+      li.classList.toggle('search-item__active');
+      document.querySelectorAll('.search-item').forEach(el => (el != li ) ? el.classList.remove('search-item__active') : false)
+    })
 
-  document.querySelector('#fifth-select-button').addEventListener('click', function() {
-    document.querySelector('#fifth-dropdown').classList.toggle('search-item__dropdown_is-active')
-    document.querySelector('#fifth-select-button').classList.toggle('search-item__button_is-active')
-    document.querySelector('#fifth-arrow-bottom').classList.toggle('arrow-bottom_rotate')
-    document.querySelector('#fifth-arrow-bottom-path').classList.toggle('arrow-bottom-path_active')
-  });
+    item.querySelector('.search-item__dropdown').forEach(element => {
+      new SimpleBar(element, {
+        scrollbarMaxSize: 28,
+      });
+    })
 
-
+  })
 
 })
-
-new SimpleBar(document.getElementById('first-dropdown'), {
-  scrollbarMaxSize: 28,
-});
-
-new SimpleBar(document.getElementById('second-dropdown'), {
-  scrollbarMaxSize: 28,
-});
-
-new SimpleBar(document.getElementById('third-dropdown'), {
-  scrollbarMaxSize: 28,
-});
-
-new SimpleBar(document.getElementById('fourth-dropdown'), {
-  scrollbarMaxSize: 28,
-});
-
-new SimpleBar(document.getElementById('fifth-dropdown'), {
-  scrollbarMaxSize: 28,
-});
-
-
-
-

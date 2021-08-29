@@ -65,13 +65,17 @@
               </a>
             </li>
           </ul>
+          <a href="" class="link-button header__link-button">
+            Войти
+          </a>
         </nav>
-        <a href="" class="link-button header__link-button">
-          Войти
-        </a>
-        <button class="search-button header__search-button">
-          <img class="search-button__img" src="/img/header/Search.svg" alt="Поиск">
-        </button>
+        <form class="header__search header__search-form">
+          <span class="search__img"></span>
+          <button class="search-button header__search-button">
+            <img class="search-button__img" src="/img/header/Search.svg" alt="Поиск">
+          </button>
+          <input class="search-input" type="text">
+        </form>
       </div>
     </div>
 
@@ -80,14 +84,14 @@
       <div class="container header__container header__container_flex">
         <ul class="search-list">
           <li class="search-item">
-            <button id="first-select-button" class="button search-item__button">
+            <button class="button search-item__button search-item__button_is-active">
               Реализм
-              <svg id="first-arrow-bottom" class="arrow-bottom" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="first-arrow-bottom-path" class="arrow-bottom-path" d="M11 5L6 10L0.999997 5" stroke="white"/>
+              <svg class="arrow-bottom arrow-bottom_rotate" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="arrow-bottom-path arrow-bottom-path_active" d="M11 5L6 10L0.999997 5" stroke="white"/>
               </svg>
             </button>
-            <div id="first-dropdown" class="search-item__dropdown" data-simplebar>
-              <ul class="dropdown__list">
+            <div class="search-item__dropdown search-item__dropdown_is-active">
+              <ul class="dropdown__list" data-simplebar>
                 <li class="">
                   <a href="" class="dropdown__link dropdown__link_tinto">
                     Тинторетто
@@ -108,19 +112,24 @@
                     Верроккьо
                   </a>
                 </li>
+                <li class="">
+                  <a href="" class="dropdown__link dropdown__link_verok">
+                    Верроккьо
+                  </a>
+                </li>
               </ul>
             </div>
           </li>
 
           <li class="search-item">
-            <button id="second-select-button" class="button search-item__button">
+            <button class="button search-item__button search-item__button_is-active">
               Импрессионизм
-              <svg id="second-arrow-bottom" class="arrow-bottom" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="second-arrow-bottom-path" class="arrow-bottom-path" d="M11 5L6 10L0.999997 5" stroke="white"/>
+              <svg class="arrow-bottom arrow-bottom_rotate" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="arrow-bottom-path arrow-bottom-path_active" d="M11 5L6 10L0.999997 5" stroke="white"/>
               </svg>
             </button>
-            <div id="second-dropdown" class="search-item__dropdown" data-simplebar>
-              <ul class="dropdown__list">
+            <div class="search-item__dropdown search-item__dropdown_is-active">
+              <ul class="dropdown__list" data-simplebar>
                 <li class="">
                   <a href="" class="dropdown__link dropdown__link_mone">
                     Моне
@@ -141,19 +150,24 @@
                     Ренуар
                   </a>
                 </li>
+                <li class="">
+                  <a href="" class="dropdown__link dropdown__link_renu">
+                    Ренуар
+                  </a>
+                </li>
               </ul>
             </div>
           </li>
 
           <li class="search-item">
-            <button id="third-select-button" class="button search-item__button">
+            <button class="button search-item__button search-item__button_is-active">
               Постимпрессионизм
-              <svg id="third-arrow-bottom" class="arrow-bottom" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="third-arrow-bottom-path" class="arrow-bottom-path" d="M11 5L6 10L0.999997 5" stroke="white"/>
+              <svg class="arrow-bottom arrow-bottom_rotate" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="arrow-bottom-path arrow-bottom-path_active" d="M11 5L6 10L0.999997 5" stroke="white"/>
               </svg>
             </button>
-            <div id="third-dropdown" class="search-item__dropdown" data-simplebar>
-              <ul class="dropdown__list">
+            <div class="search-item__dropdown search-item__dropdown_is-active">
+              <ul class="dropdown__list" data-simplebar>
                 <li class="">
                   <a href="" class="dropdown__link dropdown__link_van">
                     Ван Гог
@@ -174,19 +188,24 @@
                     Сёра
                   </a>
                 </li>
+                <li class="">
+                  <a href="" class="dropdown__link dropdown__link_ser">
+                    Сёра
+                  </a>
+                </li>
               </ul>
             </div>
           </li>
 
           <li class="search-item">
-            <button id="fourth-select-button" class="button search-item__button">
+            <button class="button search-item__button search-item__button_is-active">
               Авангард
-              <svg id="fourth-arrow-bottom" class="arrow-bottom" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="fourth-arrow-bottom-path" class="arrow-bottom-path" d="M11 5L6 10L0.999997 5" stroke="white"/>
+              <svg class="arrow-bottom arrow-bottom_rotate" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="arrow-bottom-path arrow-bottom-path_active" d="M11 5L6 10L0.999997 5" stroke="white"/>
               </svg>
             </button>
-            <div id="fourth-dropdown" class="search-item__dropdown" data-simplebar>
-              <ul class="dropdown__list">
+            <div class="search-item__dropdown search-item__dropdown_is-active">
+              <ul class="dropdown__list" data-simplebar>
                 <li class="">
                   <a href="" class="dropdown__link dropdown__link_kand">
                     Кандинский
@@ -207,19 +226,24 @@
                     Пикассо
                   </a>
                 </li>
+                <li class="">
+                  <a href="" class="dropdown__link dropdown__link_pik">
+                    Пикассо
+                  </a>
+                </li>
               </ul>
             </div>
           </li>
 
           <li class="search-item">
-            <button id="fifth-select-button" class="button search-item__button">
+            <button class="button search-item__button search-item__button_is-active">
               Футуризм
-              <svg id="fifth-arrow-bottom" class="arrow-bottom" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path id="fifth-arrow-bottom-path" class="arrow-bottom-path" d="M11 5L6 10L0.999997 5" stroke="white"/>
+              <svg class="arrow-bottom arrow-bottom_rotate" width="12" height="11" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="arrow-bottom-path arrow-bottom-path_active" d="M11 5L6 10L0.999997 5" stroke="white"/>
               </svg>
             </button>
-            <div id="fifth-dropdown" class="search-item__dropdown" data-simplebar>
-              <ul class="dropdown__list">
+            <div class="search-item__dropdown search-item__dropdown_is-active" >
+              <ul class="dropdown__list" data-simplebar>
                 <li class="">
                   <a href="" class="dropdown__link dropdown__link_kar">
                     Карра
@@ -240,11 +264,16 @@
                     Балла
                   </a>
                 </li>
+                <li class="">
+                  <a href="" class="dropdown__link dropdown__link_bal">
+                    Балла
+                  </a>
+                </li>
               </ul>
             </div>
           </li>
         </ul>
-        <form class="search-form" action="" method="get">
+        <form class="search-form" method="get">
           <div class="search-form__content">
             <img class="search-form__img" src="/img/hero/search_butn.svg" alt="Поиск">
             <input class="search-form__input" placeholder="Поиск по сайту" type="search">
@@ -279,6 +308,7 @@
 
   </header>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="/js/choices.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
