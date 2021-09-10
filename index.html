@@ -18,6 +18,9 @@
   <header class="header">
     <div class="header-top">
       <div class="container header__container">
+        <h1 class="visually-hidden" aria-hidden="true">
+          Художественная галерея
+        </h1>
         <div class="burger header__burger">
           <span class="burger__mid-lane"></span>
         </div>
@@ -65,13 +68,16 @@
               </a>
             </li>
           </ul>
-          <a href="" class="link-button header__link-button">
+          <a href="" class="link-button header__link-button header__link-button_burger">
             Войти
           </a>
         </nav>
+        <a href="" class="link-button header__link-button">
+          Войти
+        </a>
         <form class="header__search header__search-form">
           <span class="search__img"></span>
-          <button class="search-button header__search-button">
+          <button type="submit" class="search-button header__search-button">
             <img class="search-button__img" src="/img/header/Search.svg" alt="Поиск">
           </button>
           <input class="search-input" type="text">
@@ -275,7 +281,7 @@
         </ul>
         <form class="search-form" method="get">
           <div class="search-form__content">
-            <img class="search-form__img" src="/img/hero/search_butn.svg" alt="Поиск">
+            <button type="submit" class="search-button content__search-button"></button>
             <input class="search-form__input" placeholder="Поиск по сайту" type="search">
           </div>
         </form>
@@ -283,30 +289,42 @@
     </div>
 
     <!-- hero -->
-    <div class="swiper-container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide swiper-slide_first"></div>
-        <div class="swiper-slide swiper-slide_second"></div>
-        <div class="swiper-slide swiper-slide_third"></div>
+    <div class="hero">
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide swiper-slide_first"></div>
+          <div class="swiper-slide swiper-slide_second"></div>
+          <div class="swiper-slide swiper-slide_third"></div>
+        </div>
+      </div>
+      <div class="container hero__container">
+        <div class="content hero__content">
+          <h2 class="heading content__heading">
+            Прикоснитесь к прекрасному
+          </h2>
+          <p class="text content__text">
+            Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.
+          </p>
+          <a href="" class="link-button content__link-button">
+            Подписаться на рассылку
+          </a>
+        </div>
       </div>
     </div>
-    <div class="container hero__container">
-      <div class="content hero__content">
-        <h2 class="heading content__heading">
-          Прикоснитесь к прекрасному
-        </h2>
-        <p class="text content__text">
-          Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.
-        </p>
-        <a href="" class="link-button content__link-button">
-          Подписаться на рассылку
-        </a>
-      </div>
-    </div>
-
   </header>
+
+  <section class="section section-about">
+    <div class="container about__container">
+      <h2 class="heading about__heading">
+        О нас
+      </h2>
+      <p class="text about__text">
+        Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и ресурсов. Не следует, однако, забывать, что высококачественный прототип будущего проекта влечет за собой процесс внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев населения, а значит, должны быть разоблачены.
+      </p>
+    </div>
+  </section>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="/js/choices.min.js"></script>

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.search-item').forEach(el => (el != li ) ? el.classList.remove('search-item__active') : false)
     })
 
-    item.querySelector('.search-item__dropdown').forEach(element => {
+    item.querySelectorAll('.search-item__dropdown').forEach(element => {
       new SimpleBar(element, {
         scrollbarMaxSize: 28,
       });
