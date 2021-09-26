@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/swiper-bundle.css" />
     <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/choices.min.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -292,7 +294,7 @@
     <div class="hero">
       <div class="swiper-container hero__swiper-container">
         <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper hero__swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide swiper-slide_first"></div>
           <div class="swiper-slide swiper-slide_second"></div>
@@ -302,7 +304,7 @@
       <div class="container hero__container">
         <div class="content hero__content">
           <h2 class="heading content__heading">
-            Прикоснитесь к&nbspпрекрасному
+            Прикоснитесь к&nbsp;прекрасному
           </h2>
           <p class="text content__text">
             Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.
@@ -315,6 +317,8 @@
     </div>
   </header>
 
+  <!-- about -->
+
   <section class="section section-about">
     <div class="container about__container">
       <h2 class="heading about__heading">
@@ -325,6 +329,8 @@
       </p>
     </div>
   </section>
+
+  <!-- gallery -->
 
   <section class="section section-gallery">
     <div class="container gallery-container">
@@ -455,11 +461,532 @@
     </div>
   </section>
 
+  <!-- catalog -->
+
+  <section class="section section-catalog">
+    <div class="container catalog-container">
+      <div class="catalog__top-menu">
+        <h2 class="heading catalog__heading">
+          Каталог
+        </h2>
+        <ul class="catalog__tab-list">
+          <li class="catalog__tab-list-item">
+            <button class="tab-list-item__country-button france" data-path="one"></button>
+          </li>
+          <li class="catalog__tab-list-item">
+            <button class="tab-list-item__country-button germany" data-path="two"></button>
+          </li>
+          <li class="catalog__tab-list-item">
+            <button class="tab-list-item__country-button italy" data-path="two"></button>
+          </li>
+          <li class="catalog__tab-list-item">
+            <button class="tab-list-item__country-button russia" data-path="two"></button>
+          </li>
+          <li class="catalog__tab-list-item">
+            <button class="tab-list-item__country-button belgium" data-path="two"></button>
+          </li>
+        </ul>
+      </div>
+      <p class="text about__text about__text_margin about__text_display">
+        Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+      </p>
+      <div class="catalog__body">
+
+        <div class="body__left-block body__left-block_active" data-target="eleven">
+          <img class="left-block__img" src="/img/catalog/domeniko.jpg" alt="Портрет художника">
+          <h3 class="heading left-block__heading">
+            Доменико Гирландайо
+          </h3>
+          <span class="left-block__text">
+            2 июня 1448 — 11 января 1494.
+          </span>
+          <p class="left-block__paragraph">
+            Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли выступают знатные граждане Флоренции в костюмах того времени).
+          </p>
+        </div>
+
+        <div class="body__left-block" data-target="twelve">
+          <img class="left-block__img" src="/img/catalog/plugArtist.jpg" alt="Портрет художника отсутствует">
+          <span class="plug-info__text">
+            Что мы о нём знаем?
+          </span>
+          <p class="plug-text__parag plug-text__parag_max-width">
+            Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!
+          </p>
+          <a class="plug-text__link" href="">
+            В галерею
+          </a>
+        </div>
+
+        <div class="body__right-block">
+          <ul class="accordion right-block__list right-block__list_active" data-target="one">
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1400 по 1499 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__columns">
+                  <button class="button columns__artist-button" data-path="eleven">
+                    Бенедетто ди Биндо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Бергоньоне, Амброджо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Биссоло, Франческо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Больтраффио, Джованни
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Бонсиньори, Франческо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Боттичини, Рафаэлло
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Брамантино
+                  </button><button class="button columns__artist-button" data-path="twelve">
+                    Бреа, Людовико
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Бьяджо д’Антонио Туччи
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Веккьетта
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Андреа Верроккьо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Доменико Гирландайо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Беноццо Гоццоли
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Граначчи, Франческо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Грегорио ди Чекко
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Джованни да Удине
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Джованни ди Паоло
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Джорджоне
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Парентино, Бернардо
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Пезеллино
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Пьетро Перуджино
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Перуцци, Бальдассаре
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Пизанелло
+                  </button>
+                  <button class="button columns__artist-button" data-path="twelve">
+                    Пинтуриккьо
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1500 по 1599 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1600 по 1699 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1700 по 1799 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1800 по 1899 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1900 по 1999 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 2000 г.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="accordion right-block__list" data-target="two">
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1400 по 1499 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1500 по 1599 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1600 по 1699 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1700 по 1799 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1800 по 1899 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 1900 по 1999 гг.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="right-block__list-item">
+              <button class="list-item__button">
+                <span class="button__text">
+                  C 2000 г.
+                </span>
+                <svg class="icon-bottom" width="50" height="50" viewbox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <div class="list-item__content">
+                <div class="content__wrapper">
+                  <div class="content__plug-block"></div>
+                  <div class="content__plug-info">
+                    <span class="plug-info__text">
+                      Здесь пока пусто
+                    </span>
+                    <p class="plug-text__parag">
+                      А в галерее вы всегда можете найти что-то интересное для себя
+                    </p>
+                    <a class="plug-text__link" href="">
+                      В галерею
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="/js/choices.min.js"></script>
   <script src="/js/swiper-bundle.js"></script>
   <script src="/js/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="/js/animations.js"></script>
 </body>
 </html>

@@ -3,7 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //слайдер
   const swiper = new Swiper('.hero__swiper-container', {
+    slidesPerView: 1,
     loop: true,
+    allowTouchMove: false,
+    speed: 1400,
+    autoplay: {
+      delay: 3000,
+    },
+
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
   });
 
   //бургер
@@ -97,4 +109,37 @@ document.addEventListener('DOMContentLoaded', function() {
     searchEnabled: false,
     duplicateItemsAllowed: false,
   });
+
+  // country-tabs
+
+  $(function() {
+    document.querySelectorAll('.tab-list-item__country-button').forEach(function(countryBtn) {
+      countryBtn.addEventListener('click', function(event) {
+        const path = event.currentTarget.dataset.path;
+
+        document.querySelectorAll('.right-block__list').forEach(function(tabContent) {
+          tabContent.classList.remove('right-block__list_active');
+        });
+        document.querySelector(`[data-target="${path}"]`).classList.add('right-block__list_active');
+
+        $(".accordion").accordion("refresh");
+      });
+    });
+    $(".accordion").accordion({
+      active: 'false',
+      heightStyle: 'content'
+    });
+  });
+
+  document.querySelectorAll('.columns__artist-button').forEach(function(countryBtn) {
+    countryBtn.addEventListener('click', function(event) {
+      const path = event.currentTarget.dataset.path;
+
+      document.querySelectorAll('.body__left-block').forEach(function(tabContent) {
+        tabContent.classList.remove('body__left-block_active');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.add('body__left-block_active');
+    });
+  });
+
 })
