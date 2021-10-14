@@ -135,11 +135,48 @@ document.addEventListener('DOMContentLoaded', function() {
     countryBtn.addEventListener('click', function(event) {
       const path = event.currentTarget.dataset.path;
 
+      document.querySelectorAll('.columns__artist-button').forEach(function(tabBtn) {
+        tabBtn.classList.remove('columns__artist-button_active');
+      });
+
       document.querySelectorAll('.body__left-block').forEach(function(tabContent) {
         tabContent.classList.remove('body__left-block_active');
       });
       document.querySelector(`[data-target="${path}"]`).classList.add('body__left-block_active');
+      countryBtn.classList.add('columns__artist-button_active');
     });
   });
+
+  document.querySelectorAll(".catalog__tab-list-item").forEach(item => {
+    item.addEventListener("click", function() {
+        let btn = this;
+        btn.classList.add("catalog__tab-list-item_active");
+        document.querySelectorAll(".catalog__tab-list-item").forEach(el => (el != btn) ? el.classList.remove("catalog__tab-list-item_active") : false);
+    })
+  })
+
+  if (document.documentElement.clientWidth <= 800 && document.documentElement.clientWidth > 650) {
+    document.querySelectorAll('.cards__swiper-slide')[2].classList.add('cards__swiper-slide_hidden');
+  }
+
+  if (window.matchMedia("(max-width: 650px)").matches) {
+    document.querySelectorAll('.cards__swiper-slide_hidden').forEach(el => el.classList.add('cards__swiper-slide_visible'));
+    document.querySelector('.cards__swiper-container').classList.add('slider-container');
+    document.querySelector('.cards__swiper-wrapper').classList.add('swiper-wrapper');
+    document.querySelectorAll('.cards__swiper-slide').forEach(el => el.classList.add('swiper-slide'));
+    const swiperDevelopments = new Swiper('.cards__swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  }
+
+  document.querySelector('.cards__button').addEventListener('click', () => {
+    document.querySelectorAll('.cards__swiper-slide_hidden').forEach(el => el.classList.toggle('cards__swiper-slide_visible'));
+  })
 
 })
