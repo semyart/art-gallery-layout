@@ -171,12 +171,85 @@ document.addEventListener('DOMContentLoaded', function() {
 
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       },
+    });
+
+    document.querySelector('.category-heading').addEventListener('click', () => {
+      document.querySelectorAll('.category-item').forEach(el => el.classList.toggle('category-item_visible'));
+    })
+
+    document.querySelectorAll('.category-item__label').forEach(el => {
+      el.addEventListener('click', () => {
+        el.parentNode.classList.toggle('category-item_active');
+      })
+    });
+
+    document.querySelectorAll('.category-item').forEach(el => {
+      el.addEventListener('click', () => {
+        el.classList.toggle('category-item_active');
+        const input = el.querySelector('.category-item__input');
+        if (input.checked === false) {
+          input.checked = true;
+        } else {
+          input.checked = false;
+        }
+      })
     });
   }
 
   document.querySelector('.cards__button').addEventListener('click', () => {
     document.querySelectorAll('.cards__swiper-slide_hidden').forEach(el => el.classList.toggle('cards__swiper-slide_visible'));
   })
+
+  // edition
+
+  if (window.matchMedia("(min-width: 651px)").matches) {
+
+    const swiperEdition = new Swiper('.right-menu__swiper-container', {
+      autoHeight: false,
+      watchOverflow: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        // when window width is >= px
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 34,
+          slidesPerGroup: 1,
+          slidesPerColumn: 1,
+        },
+        651: {
+          slidesPerView: 2,
+          spaceBetween: 34,
+          slidesPerGroup: 2,
+          slidesPerColumn: 1,
+        },
+        801: {
+          slidesPerView: 2,
+          spaceBetween: 49,
+          slidesPerGroup: 2,
+          slidesPerColumn: 1,
+        },
+        1201: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+          slidesPerGroup: 3,
+          slidesPerColumn: 1,
+        }
+      }
+    });
+  }
+
+
 
 })
