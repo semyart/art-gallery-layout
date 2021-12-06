@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const formInput = document.querySelector('.header__search-form');
 
   //слайдер
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
   //выпадающее меню
   document.querySelectorAll('.search-item__button').forEach(item => {
 
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       let li = this.parentElement;
       li.classList.toggle('search-item__active');
-      document.querySelectorAll('.search-item').forEach(el => (el != li ) ? el.classList.remove('search-item__active') : false)
+      document.querySelectorAll('.search-item').forEach(el => (el != li) ? el.classList.remove('search-item__active') : false)
     })
 
   })
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
       1201: {
         slidesPerView: 3,
         spaceBetween: 50,
-        slidesPerGroup: 6,
+        slidesPerGroup: 3,
         slidesPerColumn: 2,
       }
     }
@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // country-tabs
 
-  $(function() {
-    document.querySelectorAll('.tab-list-item__country-button').forEach(function(countryBtn) {
-      countryBtn.addEventListener('click', function(event) {
+  $(function () {
+    document.querySelectorAll('.tab-list-item__country-button').forEach(function (countryBtn) {
+      countryBtn.addEventListener('click', function (event) {
         const path = event.currentTarget.dataset.path;
 
-        document.querySelectorAll('.right-block__list').forEach(function(tabContent) {
+        document.querySelectorAll('.right-block__list').forEach(function (tabContent) {
           tabContent.classList.remove('right-block__list_active');
         });
         document.querySelector(`[data-target="${path}"]`).classList.add('right-block__list_active');
@@ -131,15 +131,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.querySelectorAll('.columns__artist-button').forEach(function(countryBtn) {
-    countryBtn.addEventListener('click', function(event) {
+  document.querySelectorAll('.columns__artist-button').forEach(function (countryBtn) {
+    countryBtn.addEventListener('click', function (event) {
       const path = event.currentTarget.dataset.path;
 
-      document.querySelectorAll('.columns__artist-button').forEach(function(tabBtn) {
+      document.querySelectorAll('.columns__artist-button').forEach(function (tabBtn) {
         tabBtn.classList.remove('columns__artist-button_active');
       });
 
-      document.querySelectorAll('.body__left-block').forEach(function(tabContent) {
+      document.querySelectorAll('.body__left-block').forEach(function (tabContent) {
         tabContent.classList.remove('body__left-block_active');
       });
       document.querySelector(`[data-target="${path}"]`).classList.add('body__left-block_active');
@@ -148,16 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelectorAll(".catalog__tab-list-item").forEach(item => {
-    item.addEventListener("click", function() {
-        let btn = this;
-        btn.classList.add("catalog__tab-list-item_active");
-        document.querySelectorAll(".catalog__tab-list-item").forEach(el => (el != btn) ? el.classList.remove("catalog__tab-list-item_active") : false);
+    item.addEventListener("click", function () {
+      let btn = this;
+      btn.classList.add("catalog__tab-list-item_active");
+      document.querySelectorAll(".catalog__tab-list-item").forEach(el => (el != btn) ? el.classList.remove("catalog__tab-list-item_active") : false);
     })
   })
-
-  if (document.documentElement.clientWidth <= 800 && document.documentElement.clientWidth > 650) {
-    document.querySelectorAll('.cards__swiper-slide')[2].classList.add('cards__swiper-slide_hidden');
-  }
 
   if (window.matchMedia("(max-width: 650px)").matches) {
     document.querySelectorAll('.cards__swiper-slide_hidden').forEach(el => el.classList.add('cards__swiper-slide_visible'));
@@ -199,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.querySelector('.cards__button').addEventListener('click', () => {
-    document.querySelectorAll('.cards__swiper-slide_hidden').forEach(el => el.classList.toggle('cards__swiper-slide_visible'));
+    document.querySelectorAll('.cards__swiper-slide-js').forEach(el => el.classList.toggle('cards__swiper-slide_active'));
   })
 
   // edition
@@ -316,20 +312,24 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.left-block__address').after(map);
   }
 
-  let center = [55.75955877956886,37.61707877090922];
+  let center = [55.75955877956886, 37.61707877090922];
   let zoom = 15;
   if (window.matchMedia("(max-width: 1200px)").matches) {
-    center = [55.75618766909688,37.71600000852678];
+    center = [55.75618766909688, 37.71600000852678];
     zoom = 14;
   }
 
   if (window.matchMedia("(max-width: 800px)").matches) {
-    center = [55.75595666520723,37.60958078613421];
+    center = [55.75595666520723, 37.60958078613421];
     zoom = 14;
+
+    document.querySelectorAll('.columns__artist-button').forEach(el => el.addEventListener('click', () => {
+      document.querySelector(".body__left-block_active").scrollIntoView();
+    }))
   }
 
   if (window.matchMedia("(max-width: 650px)").matches) {
-    center = [55.75905317277174,37.61162089171043];
+    center = [55.75905317277174, 37.61162089171043];
     zoom = 14;
   }
 
@@ -337,15 +337,15 @@ document.addEventListener('DOMContentLoaded', function() {
   function init() {
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-        center: center,
-        zoom: zoom,
-        controls: [],
+      center: center,
+      zoom: zoom,
+      controls: [],
     }, {
       suppressMapOpenBlock: true,
       geolocationControlFloat: 'right',
     });
 
-    var myPlacemark = new ymaps.Placemark([55.75846806898367,37.60108849999989], {}, {
+    var myPlacemark = new ymaps.Placemark([55.75846806898367, 37.60108849999989], {}, {
       iconLayout: 'default#image',
       iconImageHref: 'img/contacts/marker.svg',
       iconImageSize: [20, 20],
@@ -355,8 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
       myMap.controls.add('zoomControl', {
         size: 'small',
         position: {
-            top: '250px',
-            right: '5px'
+          top: '250px',
+          right: '5px'
         }
       });
 
@@ -364,8 +364,8 @@ document.addEventListener('DOMContentLoaded', function() {
         size: 'small',
         float: 'none',
         position: {
-            top: '330px',
-            right: '5px'
+          top: '330px',
+          right: '5px'
         }
       });
     }
@@ -385,6 +385,24 @@ document.addEventListener('DOMContentLoaded', function() {
           return Number(phone) && phone.length === 10
         }
       },
+    },
+    submitHandler: function(form) {
+      let formData = new FormData(form);
+
+      let xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+          }
+        }
+      }
+
+      xhr.open('POST', '../mail.php', true);
+      xhr.send(formData);
+
+      form.reset();
     },
     messages: {
       name: 'Недопустимый формат',
