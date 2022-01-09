@@ -101,7 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerGroup: 3,
         slidesPerColumn: 2,
       }
-    }
+    },
+
+    a11y: {
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
+      slideLabelMessage: 'Картина {{index}} из {{slidesLength}}',
+    },
   });
 
   const gallerySelect = document.querySelector('#gallery-select');
@@ -192,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
     });
+
   }
 
   document.querySelector('.cards__button').addEventListener('click', () => {
@@ -242,7 +249,13 @@ document.addEventListener('DOMContentLoaded', function () {
           slidesPerGroup: 3,
           slidesPerColumn: 1,
         }
-      }
+      },
+
+      a11y: {
+        prevSlideMessage: 'Предыдущий слайд',
+        nextSlideMessage: 'Следующий слайд',
+        slideLabelMessage: 'Издание {{index}} из {{slidesLength}}',
+      },
     });
   }
 
@@ -275,6 +288,12 @@ document.addEventListener('DOMContentLoaded', function () {
     navigation: {
       nextEl: '.partners__swiper-button-next',
       prevEl: '.partners__swiper-button-prev',
+    },
+
+    a11y: {
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
+      slideLabelMessage: 'Компания {{index}} из {{slidesLength}}',
     },
   });
 
@@ -411,4 +430,51 @@ document.addEventListener('DOMContentLoaded', function () {
     colorWrong: '#D11616',
   });
 
+  // pop-up
+  const swiperSlides = document.querySelector('.right-block__swiper-wrapper').querySelectorAll('.right-block__swiper-slide');
+  const modal = document.querySelector('.gallery-modal');
+  const modalBtn = modal.querySelector('.gallery-modal__close-btn');
+  const popUpBackground = document.querySelector('.popup-background');
+  swiperSlides.forEach( (el, index) => {
+    el.addEventListener('click', () => {
+      const img = el.querySelector('.swiper-img');
+      const link = img.getAttribute('src');
+      modal.querySelector('img').src = link;
+      modal.classList.add('gallery-modal-active');
+      popUpBackground.classList.add('popup-background-active');
+      if (index === 2) {
+        modal.querySelector('.gallery-modal__author').textContent = 'Казимир Малевич';
+        modal.querySelector('.gallery-modal__picture-name').textContent = '“Женщина с граблями”';
+        modal.querySelectorAll('time')[0].textContent = 1931;
+        modal.querySelectorAll('time')[0].dateTime = 1931;
+        modal.querySelectorAll('time')[1].textContent = 1932;
+        modal.querySelectorAll('time')[1].dateTime = 1932;
+        modal.querySelector('.gallery-modal__text').textContent = 'Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.';
+      } else {
+        modal.querySelector('.gallery-modal__author').textContent = 'Автор';
+        modal.querySelector('.gallery-modal__picture-name').textContent = 'Название картины';
+        modal.querySelectorAll('time')[0].textContent = 'xxxx';
+        modal.querySelectorAll('time')[0].dateTime = '';
+        modal.querySelectorAll('time')[1].textContent = 'xxxx';
+        modal.querySelectorAll('time')[1].dateTime = '';
+        modal.querySelector('.gallery-modal__text').textContent = 'Текст';
+      }
+    })
+  })
+  modalBtn.addEventListener("click", function() {
+    modal.classList.remove("gallery-modal-active");
+    popUpBackground.classList.remove("popup-background-active");
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target.classList.contains('gallery-modal-active')) {
+      modal.classList.remove("gallery-modal-active");
+      popUpBackground.classList.remove("popup-background-active");
+    }
+  });
+
+  popUpBackground.addEventListener('click', () => {
+    modal.classList.remove("gallery-modal-active");
+    popUpBackground.classList.remove("popup-background-active");
+  })
 })
