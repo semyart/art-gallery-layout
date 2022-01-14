@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+
+
   //бургер
   document.querySelector('.header__burger').addEventListener('click', () => {
     document.querySelector('.header__burger').classList.toggle('header__burger_active');
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   //реализация поиска
-  document.querySelector('.search__img').addEventListener('click', () => {
+  document.querySelector('.header__search-img').addEventListener('click', () => {
     formInput.classList.toggle('header__search-form_active');
     document.querySelector('.header__logo').classList.toggle('header__logo_search');
     document.querySelector('.header__burger').classList.toggle('header__burger_search');
@@ -51,15 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
   //выпадающее меню
   document.querySelectorAll('.search-item__button').forEach(item => {
 
-    item.addEventListener('click', function () {
-      let li = this.parentElement;
+    item.addEventListener('click', function (event) {
+      const li = this.parentElement;
       li.classList.toggle('search-item__active');
       document.querySelectorAll('.search-item').forEach(el => (el != li) ? el.classList.remove('search-item__active') : false)
     })
 
   })
 
-  document.querySelectorAll('.dropdown__list').forEach(element => {
+  document.querySelectorAll('.search-item__dropdown-list').forEach(element => {
     new SimpleBar(element, {
       scrollbarMaxSize: 28,
     });
@@ -72,13 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
     watchOverflow: true,
 
     pagination: {
-      el: '.swiper-pagination',
+      el: '.gallery__swiper-pagination',
       type: 'fraction',
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.gallery__swiper-button-next',
+      prevEl: '.gallery__swiper-button-prev',
     },
 
     breakpoints: {
@@ -96,6 +98,12 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerColumn: 2,
       },
       1201: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        slidesPerGroup: 2,
+        slidesPerColumn: 2,
+      },
+      1501: {
         slidesPerView: 3,
         spaceBetween: 50,
         slidesPerGroup: 3,
@@ -119,37 +127,36 @@ document.addEventListener('DOMContentLoaded', function () {
   // country-tabs
 
   $(function () {
-    document.querySelectorAll('.tab-list-item__country-button').forEach(function (countryBtn) {
+    document.querySelectorAll('.catalog__country-button').forEach(function (countryBtn) {
       countryBtn.addEventListener('click', function (event) {
         const path = event.currentTarget.dataset.path;
 
-        document.querySelectorAll('.right-block__list').forEach(function (tabContent) {
-          tabContent.classList.remove('right-block__list_active');
+        document.querySelectorAll('.catalog__accordion-list').forEach(function (tabContent) {
+          tabContent.classList.remove('catalog__accordion-list_active');
         });
-        document.querySelector(`[data-target="${path}"]`).classList.add('right-block__list_active');
+        document.querySelector(`[data-target="${path}"]`).classList.add('catalog__accordion-list_active');
 
         $(".accordion").accordion("refresh");
       });
     });
     $(".accordion").accordion({
-      active: 'false',
       heightStyle: 'content'
     });
   });
 
-  document.querySelectorAll('.columns__artist-button').forEach(function (countryBtn) {
+  document.querySelectorAll('.catalog__columns-button').forEach(function (countryBtn) {
     countryBtn.addEventListener('click', function (event) {
       const path = event.currentTarget.dataset.path;
 
-      document.querySelectorAll('.columns__artist-button').forEach(function (tabBtn) {
-        tabBtn.classList.remove('columns__artist-button_active');
+      document.querySelectorAll('.catalog__columns-button').forEach(function (tabBtn) {
+        tabBtn.classList.remove('catalog__columns-button_active');
       });
 
-      document.querySelectorAll('.body__left-block').forEach(function (tabContent) {
-        tabContent.classList.remove('body__left-block_active');
+      document.querySelectorAll('.catalog__left-block').forEach(function (tabContent) {
+        tabContent.classList.remove('catalog__left-block_active');
       });
-      document.querySelector(`[data-target="${path}"]`).classList.add('body__left-block_active');
-      countryBtn.classList.add('columns__artist-button_active');
+      document.querySelector(`[data-target="${path}"]`).classList.add('catalog__left-block_active');
+      countryBtn.classList.add('catalog__columns-button_active');
     });
   });
 
@@ -214,13 +221,13 @@ document.addEventListener('DOMContentLoaded', function () {
       watchOverflow: true,
 
       pagination: {
-        el: '.swiper-pagination',
+        el: '.edition__swiper-pagination',
         type: 'fraction',
       },
 
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.edition__swiper-button-next',
+        prevEl: '.edition__swiper-button-prev',
       },
 
       breakpoints: {
@@ -244,6 +251,12 @@ document.addEventListener('DOMContentLoaded', function () {
           slidesPerColumn: 1,
         },
         1201: {
+          slidesPerView: 2,
+          spaceBetween: 60,
+          slidesPerGroup: 2,
+          slidesPerColumn: 1,
+        },
+        1501: {
           slidesPerView: 3,
           spaceBetween: 50,
           slidesPerGroup: 3,
@@ -342,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
     center = [55.75595666520723, 37.60958078613421];
     zoom = 14;
 
-    document.querySelectorAll('.columns__artist-button').forEach(el => el.addEventListener('click', () => {
+    document.querySelectorAll('.catalog__accordion-button').forEach(el => el.addEventListener('click', () => {
       document.querySelector(".body__left-block_active").scrollIntoView();
     }))
   }
@@ -405,12 +418,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       },
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       let formData = new FormData(form);
 
       let xhr = new XMLHttpRequest();
 
-      xhr.onreadystatechange = function() {
+      xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             console.log('Отправлено');
@@ -435,8 +448,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.querySelector('.gallery-modal');
   const modalBtn = modal.querySelector('.gallery-modal__close-btn');
   const popUpBackground = document.querySelector('.popup-background');
-  swiperSlides.forEach( (el, index) => {
+  const body = document.querySelector('body');
+  swiperSlides.forEach((el, index) => {
     el.addEventListener('click', () => {
+      body.classList.add('body-blocked');
       const img = el.querySelector('.swiper-img');
       const link = img.getAttribute('src');
       modal.querySelector('img').src = link;
@@ -461,20 +476,32 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   })
-  modalBtn.addEventListener("click", function() {
+  modalBtn.addEventListener("click", function () {
     modal.classList.remove("gallery-modal-active");
     popUpBackground.classList.remove("popup-background-active");
+    body.classList.remove('body-blocked');
   });
 
   modal.addEventListener('click', (event) => {
     if (event.target.classList.contains('gallery-modal-active')) {
       modal.classList.remove("gallery-modal-active");
       popUpBackground.classList.remove("popup-background-active");
+      body.classList.remove('body-blocked');
     }
   });
 
   popUpBackground.addEventListener('click', () => {
     modal.classList.remove("gallery-modal-active");
     popUpBackground.classList.remove("popup-background-active");
+    body.classList.remove('body-blocked');
   })
+
+  window.addEventListener('click', e => {
+    const target = e.target;
+    if (document.querySelector('.search-item__active') != null && !document.querySelector('.search-item__active').contains(target)) {
+      document.querySelector('.search-item__active').classList.remove('search-item__active');
+      body.classList.remove('body-blocked');
+    }
+  })
+
 })
