@@ -208,8 +208,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  document.querySelector('.cards__button').addEventListener('click', () => {
+  document.querySelector('.cards__button').addEventListener('click', function() {
     document.querySelectorAll('.cards__swiper-slide-js').forEach(el => el.classList.toggle('cards__swiper-slide_active'));
+    this.remove();
   })
 
   // edition
@@ -270,10 +271,12 @@ document.addEventListener('DOMContentLoaded', function () {
         slideLabelMessage: 'Издание {{index}} из {{slidesLength}}',
       },
     });
+  } else {
+    document.querySelector('.edition__slider-buttons').remove();
   }
 
   const partnersSwiper = new Swiper('.partners__swiper-container', {
-    loop: true,
+    loop: false,
 
     breakpoints: {
       // when window width is >= px
@@ -339,9 +342,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (window.matchMedia("(max-width: 650px)").matches) {
     const map = document.createElement('div');
-    map.classList.add('right-block__map');
+    map.classList.add('contacts__map');
     map.id = 'map';
-    document.querySelector('.left-block__address').after(map);
+    document.querySelector('.contacts__content-address').after(map);
   }
 
   let center = [55.75955877956886, 37.61707877090922];
@@ -420,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     submitHandler: function (form) {
       let formData = new FormData(form);
+      document.querySelector('.order-modal').classList.add('modal-active');
 
       let xhr = new XMLHttpRequest();
 
@@ -427,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             console.log('Отправлено');
+            document.querySelector('.order-modal').classList.add('modal-active');
           }
         }
       }
@@ -446,8 +451,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // pop-up
   const swiperSlides = document.querySelector('.right-block__swiper-wrapper').querySelectorAll('.right-block__swiper-slide');
   const modal = document.querySelector('.gallery-modal');
-  const modalBtn = modal.querySelector('.gallery-modal__close-btn');
-  const popUpBackground = document.querySelector('.popup-background');
   const body = document.querySelector('body');
   swiperSlides.forEach((el, index) => {
     el.addEventListener('click', () => {
@@ -455,8 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const img = el.querySelector('.swiper-img');
       const link = img.getAttribute('src');
       modal.querySelector('img').src = link;
-      modal.classList.add('gallery-modal-active');
-      popUpBackground.classList.add('popup-background-active');
+      modal.classList.add('modal-active');
       if (index === 2) {
         modal.querySelector('.gallery-modal__author').textContent = 'Казимир Малевич';
         modal.querySelector('.gallery-modal__picture-name').textContent = '“Женщина с граблями”';
@@ -476,25 +478,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   })
-  modalBtn.addEventListener("click", function () {
-    modal.classList.remove("gallery-modal-active");
-    popUpBackground.classList.remove("popup-background-active");
-    body.classList.remove('body-blocked');
-  });
 
-  modal.addEventListener('click', (event) => {
-    if (event.target.classList.contains('gallery-modal-active')) {
-      modal.classList.remove("gallery-modal-active");
-      popUpBackground.classList.remove("popup-background-active");
+  document.querySelectorAll('.modal-close-btn').forEach(el => el.addEventListener('click', () => {
+    el.closest('.modal-active').classList.remove('modal-active');
+    body.classList.remove('body-blocked');
+  }));
+
+  document.querySelectorAll('.modal').forEach(el => el.addEventListener('click', function(event) {
+    if (!event.target.closest('.modal-content')) {
+      this.classList.remove("modal-active");
       body.classList.remove('body-blocked');
     }
-  });
+  }));
 
-  popUpBackground.addEventListener('click', () => {
-    modal.classList.remove("gallery-modal-active");
-    popUpBackground.classList.remove("popup-background-active");
+  document.querySelector('.modal-submit-button').addEventListener('click', function() {
+    this.closest('.modal-active').classList.remove('modal-active');
     body.classList.remove('body-blocked');
-  })
+  });
 
   window.addEventListener('click', e => {
     const target = e.target;

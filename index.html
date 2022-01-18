@@ -380,10 +380,10 @@
         <div class="right-block">
           <div class="swiper-container right-block__swiper-container">
             <div class="slider-buttons">
-              <button class="button swiper-button-prev right-block__swiper-button-prev right-block__swiper-button-prev_white-border gallery__swiper-button-prev"
+              <button class="button swiper-button-prev right-block__swiper-button-prev gallery__swiper-button-prev"
                 aria-label="Перейти на предыдущую страницу слайдера"></button>
               <div class="swiper-pagination gallery__swiper-pagination"></div>
-              <button class="button swiper-button-next right-block__swiper-button-next right-block__swiper-button-next_white-border gallery__swiper-button-next"
+              <button class="button swiper-button-next right-block__swiper-button-next gallery__swiper-button-next"
                 aria-label="Перейти на следующую страницу слайдера"></button>
             </div>
             <!-- Additional required wrapper -->
@@ -1396,7 +1396,7 @@
           </div>
 
           <div class="right-menu">
-            <div class="slider-buttons">
+            <div class="slider-buttons edition__slider-buttons">
               <button class="button swiper-button-prev right-menu__swiper-button-prev edition__swiper-button-prev"></button>
               <div class="swiper-pagination right-menu__swiper-pagination edition__swiper-pagination"></div>
               <button class="button swiper-button-next right-menu__swiper-button-next edition__swiper-button-next"></button>
@@ -1762,24 +1762,37 @@
     </div>
   </footer>
 
-  <div class="gallery-modal">
-    <div class="gallery-modal__content">
-      <button class="gallery-modal__close-btn"></button>
-      <div class="gallery-modal__content-left">
-        <img src="/img/gallery/jivo2.jpg" alt="Картина" />
-      </div>
-      <div class="gallery-modal__content-right">
-        <h3 class="gallery-modal__author">Автор</h3>
-        <h3 class="gallery-modal__picture-name">Название картины</h3>
-        <span class="gallery-modal__date">
-          <time datetime="2020">xxxx</time> - <time datetime="2020">xxxx</time>
-        </span>
-        <p class="gallery-modal__text">Текст</p>
+  <div class="modal gallery-modal">
+    <div class="modal__body gallery-modal__body">
+      <div class="modal-content gallery-modal__modal-content">
+        <button class="modal-close-btn gallery-modal__modal-close-btn"></button>
+        <div class="gallery-modal__modal-content-left">
+          <img src="/img/gallery/jivo2.jpg" alt="Картина" />
+        </div>
+        <div class="gallery-modal__modal-content-right">
+          <h3 class="gallery-modal__author">Автор</h3>
+          <h3 class="gallery-modal__picture-name">Название картины</h3>
+          <span class="gallery-modal__date">
+            <time datetime="2020">xxxx</time> - <time datetime="2020">xxxx</time>
+          </span>
+          <p class="gallery-modal__text">Текст</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="popup-background"></div>
+  <div class="modal order-modal">
+    <div class="modal__body order-modal__body">
+      <div class="modal-content order-modal__modal-content">
+        <button class="modal-close-btn order-modal__modal-close-btn"></button>
+        <span class="modal-text order-modal__modal-text">
+          Заявка успешно отправлена!
+        </span>
+        <button class="modal-submit-button">Продолжить</button>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
