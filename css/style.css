@@ -491,9 +491,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   border-color: var(--dark-violet);
 }
 
-.dropdown__link:focus-visible {
+.search-item__dropdown-link:focus-visible {
   outline: 2px solid var(--violet);
   outline-offset: 0;
+}
+
+.search-item__dropdown-link:active {
+  box-shadow: 0 0 0 2px #D1A9F0;
 }
 
 .search-item__dropdown-link_tinto:active {
@@ -1010,7 +1014,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
 }
 
 .modal-active {
@@ -1022,11 +1025,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   position: absolute;
   max-width: 900px;
   width: 100%;
-  height: 500px;
+  max-height: 500px;
+  height: 100%;
   display: flex;
   background-color: #fff;
   color: #000;
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 
 .gallery-modal__modal-content-left {
@@ -1069,6 +1073,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   height: 21px;
   width: 1px;
   top: 0;
+  transition: background-color .3s ease-in-out;
 }
 
 .modal-close-btn::after {
@@ -1077,6 +1082,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .modal-close-btn::before {
   transform: rotate(45deg);
+}
+
+.modal-close-btn:active::after,
+.modal-close-btn:active::before {
+  background-color: var(--dark-violet);
+}
+
+.modal-close-btn:focus-visible::after,
+.modal-close-btn:focus-visible::before {
+  background-color: var(--violet);
 }
 
 .popup-background {
@@ -2276,8 +2291,8 @@ input[type="number"]:focus {
     border-color: var(--bright-violet);
   }
 
-  .dropdown__link:hover {
-    box-shadow: 0 0 0 3px var(--violet);
+  .search-item__dropdown-link:hover:not(:focus-visible):not(:active) {
+    box-shadow: 0 0 0 2px var(--violet);
   }
 
   .content__link-button:hover {
@@ -2408,6 +2423,11 @@ input[type="number"]:focus {
 
   .choices__inner:hover {
     background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .modal-close-btn:hover::after,
+  .modal-close-btn:hover::before {
+    background-color: var(--violet);
   }
 }
 
@@ -2671,7 +2691,7 @@ input[type="number"]:focus {
 
   .gallery-modal__modal-content {
     max-width: 594px;
-    height: 594px;
+    max-height: 594px;
   }
 
   .gallery-modal__text {
@@ -4057,7 +4077,7 @@ input[type="number"]:focus {
         .gallery-modal__modal-content {
           flex-direction: column;
           max-width: calc(290/320 * 100%);
-          height: 600px;
+          max-height: 600px;
         }
 
         .gallery-modal__modal-content-left {
