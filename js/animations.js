@@ -408,6 +408,9 @@ document.addEventListener('DOMContentLoaded', function () {
     myMap.geoObjects.add(myPlacemark);
   };
 
+  var telInput = document.querySelector('.call-form__input_tel');
+  Inputmask("+7 (999) 999-99-99").mask(telInput);
+
   new JustValidate('.call-form', {
     rules: {
       name: {
@@ -416,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
       phone: {
         required: true,
         function: (name, value) => {
-          const phone = document.querySelector('.call-form__input_tel').value;
+          const phone = telInput.inputmask.unmaskedvalue();
           return Number(phone) && phone.length === 10
         }
       },
